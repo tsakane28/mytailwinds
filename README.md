@@ -18,11 +18,11 @@ A modern, interactive portfolio landing page with mesmerizing visual effects and
 
 1. Clone repository:
    ```bash
-   git clone https://github.com/yourusername/future-dev-portfolio.git
+   git clone https://github.com/tsakane28/mytailwinds.git
    ```
 2. Open in browser:
    ```bash
-   cd future-dev-portfolio && open index.html
+   cd mytailwinds&& open index.html
    ```
 
 ## Technologies Used 💻
