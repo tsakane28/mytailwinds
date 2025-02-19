@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Future Dev 🚀</title>
-    <link href="src/output.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Background water ripple effect */
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background: radial-gradient(circle, rgba(18,18,18,1) 0%, rgba(9,9,9,1) 100%);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
             position: relative;
         }
@@ -32,15 +44,28 @@
 
         /* Glowing text effect */
         .glow-text {
+            font-size: 3rem;
+            font-weight: bold;
             text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
         }
 
         /* Neon button effect */
         .neon-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
             position: relative;
             overflow: hidden;
             transition: 0.3s ease-in-out;
         }
+
+        .blue { background: #2563eb; }
+        .purple { background: #9333ea; }
 
         .neon-button::before {
             content: "";
@@ -59,7 +84,11 @@
         .neon-button:hover::before {
             opacity: 1;
         }
-        
+
+        .neon-button:hover {
+            transform: scale(1.05);
+        }
+
         /* Water ripple effect */
         .ripple {
             position: absolute;
@@ -76,26 +105,28 @@
             0% { transform: scale(0); opacity: 1; }
             100% { transform: scale(3); opacity: 0; }
         }
+
+        /* Button Container */
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen text-center p-6 text-white">
-    
+<body>
     <!-- Floating Shapes -->
     <div class="shape" style="top: 10%; left: 10%; animation-duration: 5s;"></div>
     <div class="shape" style="top: 50%; left: 80%; animation-duration: 7s;"></div>
     <div class="shape" style="top: 80%; left: 40%; animation-duration: 6s;"></div>
 
     <!-- Main Content -->
-    <h1 class="text-5xl font-bold glow-text">Future Dev 🚀</h1>
-    <p class="mt-4 text-lg text-gray-300">Crafting digital experiences that blend innovation with aesthetics.</p>
+    <h1 class="glow-text">Future Dev 🚀</h1>
+    <p>Crafting digital experiences that blend innovation with aesthetics.</p>
     
-    <div class="mt-6 flex space-x-4">
-        <button class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-lg neon-button hover:bg-blue-700 transition">
-            View Projects
-        </button>
-        <button class="px-6 py-3 bg-purple-500 text-white font-semibold rounded-lg shadow-lg neon-button hover:bg-purple-700 transition">
-            Contact Me
-        </button>
+    <div class="button-container">
+        <button class="neon-button blue">View Projects</button>
+        <button class="neon-button purple">Contact Me</button>
     </div>
 
     <script>
@@ -111,6 +142,5 @@
             }, 600);
         });
     </script>
-
 </body>
 </html>
