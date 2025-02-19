@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Dev 🚀</title>
+    <link href="src/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Background water ripple effect */
+        body {
+            background: radial-gradient(circle, rgba(18,18,18,1) 0%, rgba(9,9,9,1) 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating shapes */
+        .shape {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(30px); }
+        }
+
+        /* Glowing text effect */
+        .glow-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
+        }
+
+        /* Neon button effect */
+        .neon-button {
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s ease-in-out;
+        }
+
+        .neon-button::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, cyan, magenta);
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .neon-button:hover::before {
+            opacity: 1;
+        }
+        
+        /* Water ripple effect */
+        .ripple {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(0, 255, 255, 0.2);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen text-center p-6 text-white">
+    
+    <!-- Floating Shapes -->
+    <div class="shape" style="top: 10%; left: 10%; animation-duration: 5s;"></div>
+    <div class="shape" style="top: 50%; left: 80%; animation-duration: 7s;"></div>
+    <div class="shape" style="top: 80%; left: 40%; animation-duration: 6s;"></div>
+
+    <!-- Main Content -->
+    <h1 class="text-5xl font-bold glow-text">Future Dev 🚀</h1>
+    <p class="mt-4 text-lg text-gray-300">Crafting digital experiences that blend innovation with aesthetics.</p>
+    
+    <div class="mt-6 flex space-x-4">
+        <button class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-lg neon-button hover:bg-blue-700 transition">
+            View Projects
+        </button>
+        <button class="px-6 py-3 bg-purple-500 text-white font-semibold rounded-lg shadow-lg neon-button hover:bg-purple-700 transition">
+            Contact Me
+        </button>
+    </div>
+
+    <script>
+        // Water ripple effect on mouse movement
+        document.body.addEventListener("mousemove", function(event) {
+            let ripple = document.createElement("div");
+            ripple.classList.add("ripple");
+            ripple.style.left = `${event.clientX - 50}px`;
+            ripple.style.top = `${event.clientY - 50}px`;
+            document.body.appendChild(ripple);
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    </script>
+
+</body>
+</html>
