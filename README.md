@@ -61,4 +61,4 @@ MIT License - Feel free to modify and use for your own projects!
 ---
 
 **Craft the future with code** 🚀  
-[Live Demo](#) | [Contact Me](#) | [View Projects](#)
+[Live Demo]( https://tsakane28.github.io/mytailwinds/) | [Contact Me](+263776555485) | [View Projects]( https://tsakane28.github.io/mytailwinds/)
